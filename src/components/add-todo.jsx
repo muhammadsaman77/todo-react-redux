@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../redux/slice/todo-slice";
 import { useState } from "react";
-
+import notify from "../assets/notification";
 export default function AddTodo() {
   const dispatch = useDispatch();
   const { todos } = useSelector((state) => state.todos);
@@ -11,19 +11,24 @@ export default function AddTodo() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(
-      addTodo({
-        id: todos.length + 1,
-        content: input,
-        completed: false,
-      })
-    );
-    setInput("");
+    if (input.length === 0) {
+      return notify("error");
+    } else {
+      dispatch(
+        addTodo({
+          id: todos.length + 1,
+          content: input,
+          completed: false,
+        })
+      );
+      setInput("");
+      notify();
+    }
   };
+
   return (
     <>
-      <div className="fixed bottom-3 w-full px-5">
+      <div className="fixed bottom-3 w-full px-5 lg:w-1/2">
         <form onSubmit={handleSubmit}>
           <input
             type="text"

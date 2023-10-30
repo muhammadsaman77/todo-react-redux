@@ -17,25 +17,27 @@ export default function ListTodo() {
 
   const allClass = `${
     filter === "SHOW_ALL"
-      ? "text-indigo-600 border-b border-indigo-600 font-semibold"
+      ? "text-indigo-600 border-b border-indigo-600 font-semibold lg:border-b-2"
       : "text-black "
   }`;
   const activeClass = `${
     filter === "SHOW_ACTIVE"
-      ? "text-indigo-600 border-b border-indigo-600 font-semibold"
+      ? "text-indigo-600 border-b border-indigo-600 font-semibold lg:border-b-2"
       : "text-black"
   }`;
   const completedClass = `${
     filter === "SHOW_COMPLETED"
-      ? "text-indigo-600 border-b border-indigo-600 font-semibold"
+      ? "text-indigo-600 border-b border-indigo-600 font-semibold lg:border-b-2"
       : "text-black"
   }`;
 
   return (
     <>
-      <div className="px-5 pt-3">
-        <h1 className="font-inter text-3xl font-[900] mb-1">Todo List</h1>
-        <div className="font-inter flex gap-3 mb-3">
+      <div className="px-5 pt-3 lg:pt-5">
+        <h1 className="font-inter text-3xl font-[900] mb-1 lg:mb-2">
+          Todo List
+        </h1>
+        <div className="font-inter flex gap-3 lg:gap-5 mb-3">
           <button onClick={() => setFilter("SHOW_ALL")} className={allClass}>
             All
           </button>

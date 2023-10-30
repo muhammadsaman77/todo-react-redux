@@ -5,16 +5,18 @@ import {
   toogleTodo,
   editContentTodo,
 } from "../redux/slice/todo-slice";
-import edit from "../assets/edit.svg";
-import trash from "../assets/trash.svg";
-import checklist from "../assets/checklist.svg";
+import edit from "../assets/svg/edit.svg";
+import trash from "../assets/svg/trash.svg";
+import checklist from "../assets/svg/checklist.svg";
 import { useState } from "react";
+import notify from "../assets/notification";
 export default function Todo({ id, content, completed }) {
   const dispatch = useDispatch();
   const [isEdit, setIsEdit] = useState(false);
   const [input, setInput] = useState(content);
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
+    notify("delete");
   };
   const handleToggle = (id) => {
     dispatch(toogleTodo(id));
@@ -47,7 +49,7 @@ export default function Todo({ id, content, completed }) {
               <input
                 type="text"
                 value={input}
-                className="border-b-2 outline-none"
+                className="border-b-2  outline-none"
                 onChange={(e) => handleInputChange(e)}
               />
             ) : (
