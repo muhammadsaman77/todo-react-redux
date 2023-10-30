@@ -27,11 +27,12 @@ export default function AddTodo() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            placeholder="Insert Your Todo Here"
             onChange={handleChange}
             value={input}
-            className="block w-full"
+            className="block w-full py-1 pl-3 outline outline-indigo-600 rounded"
           />
-          <button className="font-inter bg-indigo-700 text-white w-full h-10 mt-3 font-semibold">
+          <button className=" rounded font-inter bg-indigo-600 text-white w-full py-2 mt-3 font-semibold text-lg  ">
             ADD TODO
           </button>
         </form>
