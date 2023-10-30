@@ -6,8 +6,18 @@ const todoSlice = createSlice({
     todos: [
       {
         id: 1,
-        content: "anjay mabar",
+        content: "Mengerjakan technical assignment skilvul",
         completed: true,
+      },
+      {
+        id: 2,
+        content: "Belajar Manajemen Basis Data",
+        completed: false,
+      },
+      {
+        id: 3,
+        content: "Menyelesaikan projek web",
+        completed: false,
       },
     ],
   },
