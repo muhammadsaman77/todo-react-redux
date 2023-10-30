@@ -57,7 +57,7 @@ export default function Todo({ id, content, completed }) {
             )}
           </div>
         </div>
-        <div className="w-[35 %] md:w-[15%]">
+        <div className="w-[35%] md:w-[15%]">
           {isEdit ? (
             <button
               onClick={() => handleSubmitEdit(id, input)}
