@@ -37,8 +37,8 @@ export default function Todo({ id, content, completed }) {
   return (
     <>
       <div className="bg-[#ffffff] w-full py-3 mb-3 rounded-md drop-shadow pl-5 pr-3 flex justify-between items-center">
-        <div>
-          <div className="cursor-pointer">
+        <div className="w-[80%]">
+          <div className=" flex">
             <input
               type="checkbox"
               checked={completed}
@@ -49,7 +49,7 @@ export default function Todo({ id, content, completed }) {
               <input
                 type="text"
                 value={input}
-                className="border-b-2  outline-none"
+                className="border-b-2  outline-none w-full"
                 onChange={(e) => handleInputChange(e)}
               />
             ) : (
@@ -57,7 +57,7 @@ export default function Todo({ id, content, completed }) {
             )}
           </div>
         </div>
-        <div>
+        <div className="w-[35 %] md:w-[15%]">
           {isEdit ? (
             <button
               onClick={() => handleSubmitEdit(id, input)}

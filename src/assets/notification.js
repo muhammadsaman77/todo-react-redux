@@ -12,7 +12,7 @@ export default function notify(type = "add") {
     });
   }
   if (type === "error") {
-    toast.error("This field cannot be empty !", {
+    toast.error("This Field Cannot Be Empty !", {
       position: toast.POSITION.TOP_CENTER,
     });
   }
